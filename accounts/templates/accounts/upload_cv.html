@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngarko CV-në</title>
+</head>
+<body>
+
+    <h1>Ngarko CV-në tënde</h1>
+
+    <p>Zgjedhe CV-në në format PDF ose DOCX.</p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Ngarko CV-në</button>
+    </form>
+
+</body>
+</html>
