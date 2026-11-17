@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyçu në sistem</title>
+</head>
+<body>
+
+    <h1>Kyçu në sistem</h1>
+
+    {% if form.errors %}
+        <p>Username ose password është gabim.</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="id_username">Username:</label>
+        {{ form.username }}
+
+        <br><br>
+
+        <label for="id_password">Password:</label>
+        {{ form.password }}
+
+        <br><br>
+
+        <button type="submit">Kyçu</button>
+    </form>
+
+</body>
+</html>
